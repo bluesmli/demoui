@@ -262,21 +262,33 @@ class Ui_MainWindow(QWidget):
         self.path = settings.value("path")
 
     def FreshRoomRoom(self):
+        '''
+        刷新教室方法
+        :return:
+        '''
         self.init_settings()
         FreshRoom(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid)
 
+    def switchcaOrMicrophone(self):
+        '''
+        切换摄像头及麦克风
+        :return:
+        '''
+        self.init_settings()
+        switchcaOrMicrophone(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
+                             self.cameraname,self.Microphone)
 
-
+    def efect(self):
+        pass
 
 
 
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
     log=Log()
-    log.Info("start begin test")
+    log.Info("start test")
     ui.Widget.show()
     sys.exit(app.exec_())

@@ -8,7 +8,7 @@ import time
 from utils.logs import *
 log = Log()
 
-def FreshRoom(business,env,communicate,role,channelid,userid):
+def FreshRoom(business,env,communicate,role,channelid,userid,path,runNum):
     '''
     刷新教室
     :param business: 业务
@@ -17,12 +17,14 @@ def FreshRoom(business,env,communicate,role,channelid,userid):
     :param role: 角色
     :param channelid: 频道id
     :param userid: 用户id
+    :param path 软件路径
+    :param runNum 运行次数
     :return:
     '''
     roomwin=None
     try:
         # 打开软件
-        app = Application(backend="uia").start(EXEPATH)
+        app = Application(backend="uia").start(path)
         # 进行设置
         win = app.window(title="Form")
         win.Button5.click()
@@ -57,7 +59,7 @@ def FreshRoom(business,env,communicate,role,channelid,userid):
 
         roomwin.type_keys("{VK_RETURN}")
         log.Info("======fresh room start======")
-        for i in range(REFRESHNUM):
+        for i in range(runNum):
             roomwin.Button5.click()
             roomwin.type_keys("{VK_RETURN}")
         #避免弹框还在
@@ -77,7 +79,7 @@ def FreshRoom(business,env,communicate,role,channelid,userid):
 
 
 
-def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,cameraname,Microphone):
+def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,cameraname,Microphone,path):
     '''
     切换摄像头及麦克风
     :param business: 业务
@@ -88,12 +90,13 @@ def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,camerana
     :param userid: 用户id
     :param cameraname 摄像头名称
     :param Microphone 麦克风名称
+    :param path 软件路径
     :return:
     '''
     roomwin=None
     try:
         # 打开软件
-        app = Application(backend="uia").start(EXEPATH)
+        app = Application(backend="uia").start(path)
 
         # 进行设置
         win = app.window(title="Form")

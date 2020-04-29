@@ -267,7 +267,8 @@ class Ui_MainWindow(QWidget):
         :return:
         '''
         self.init_settings()
-        FreshRoom(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid)
+        FreshRoom(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
+                  self.path,self.runNum)
 
     def switchcaOrMicrophone(self):
         '''
@@ -276,7 +277,7 @@ class Ui_MainWindow(QWidget):
         '''
         self.init_settings()
         switchcaOrMicrophone(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
-                             self.cameraname,self.Microphone)
+                             self.cameraname,self.Microphone,self.path)
 
     def efect(self):
         pass

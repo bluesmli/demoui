@@ -1,0 +1,161 @@
+[31m[2020-04-29 09:22:59,049] [logs.py:48] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 37, in FreshRoom
+    batch_combobox.select(business)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 362, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 303, in find_elements
+    elements = findbestmatch.find_best_control_matches(best_match, wrapped_elems)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findbestmatch.py", line 533, in find_best_control_matches
+    raise MatchError(items = name_control_map.keys(), tofind = search_text)
+pywinauto.findbestmatch.MatchError: Could not find 'Dialog' in 'dict_keys([])'
+[0m
+[35m[2020-04-29 09:22:59,052] [logs.py:42] [logs:__console] [INFO]- ======window close======[0m
+[31m[2020-04-29 14:27:52,629] [logs.py:49] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 37, in FreshRoom
+    batch_combobox.select(business)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 362, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 303, in find_elements
+    elements = findbestmatch.find_best_control_matches(best_match, wrapped_elems)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findbestmatch.py", line 533, in find_best_control_matches
+    raise MatchError(items = name_control_map.keys(), tofind = search_text)
+pywinauto.findbestmatch.MatchError: Could not find 'Dialog' in 'dict_keys([])'
+[0m
+[31m[2020-04-29 14:28:44,906] [logs.py:49] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 29, in FreshRoom
+    win.Button5.click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 362, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title': 'Form', 'process': 12892, 'backend': 'uia'}
+[0m
+[31m[2020-04-29 15:18:41,350] [logs.py:49] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 37, in FreshRoom
+    batch_combobox.select(business)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 362, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 303, in find_elements
+    elements = findbestmatch.find_best_control_matches(best_match, wrapped_elems)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findbestmatch.py", line 533, in find_best_control_matches
+    raise MatchError(items = name_control_map.keys(), tofind = search_text)
+pywinauto.findbestmatch.MatchError: Could not find 'Dialog' in 'dict_keys([])'
+[0m
+[31m[2020-04-29 15:20:52,215] [logs.py:49] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 59, in FreshRoom
+    roomwin.type_keys("{VK_RETURN}")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 378, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'backend': 'uia', 'process': 37820, 'title': 'classroom'}
+[0m
+[31m[2020-04-29 15:47:28,297] [logs.py:49] [logs:__console] [ERROR]- Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 256, in __resolve_control
+    criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\windows_demo\utils\VslDemotest.py", line 37, in FreshRoom
+    batch_combobox.select(business)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 362, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 259, in __resolve_control
+    raise e.original_exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\application.py", line 201, in __get_ctrl
+    dialog = self.backend.generic_wrapper_class(findwindows.find_element(**criteria[0]))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findwindows.py", line 303, in find_elements
+    elements = findbestmatch.find_best_control_matches(best_match, wrapped_elems)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pywinauto\findbestmatch.py", line 533, in find_best_control_matches
+    raise MatchError(items = name_control_map.keys(), tofind = search_text)
+pywinauto.findbestmatch.MatchError: Could not find 'Dialog' in 'dict_keys([])'
+[0m

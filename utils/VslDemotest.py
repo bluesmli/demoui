@@ -2,7 +2,7 @@ import unittest
 from ddt import ddt,data,unpack
 from utils.pywins import *
 from pywinauto.application import Application
-from utils.settings import *
+
 import traceback
 import time
 from utils.logs import *

@@ -7,6 +7,7 @@ import traceback
 import sys
 sys.coinit_flags = 2 #修正pyqt5 和pywinauto 不能同时引入的问题
 from utils.VslDemotest import *
+from vipkidui.resources_rc import *
 
 
 class Stream(QObject):
@@ -171,7 +172,8 @@ class Ui_MainWindow(QWidget):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "测试系统"))
+        MainWindow.setWindowIcon(QIcon(':/images/image.ico'))
         self.label_19.setText(_translate("MainWindow", "运行日志"))
         self.label_28.setText(_translate("MainWindow", "通用配置"))
         self.label_25.setText(_translate("MainWindow", "运行次数"))
@@ -283,13 +285,8 @@ class Ui_MainWindow(QWidget):
         pass
 
 
-
-
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
-    log=Log()
-    log.Info("start test")
     ui.Widget.show()
     sys.exit(app.exec_())

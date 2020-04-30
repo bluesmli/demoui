@@ -63,5 +63,20 @@ class Log:
     def error(self, message):
         self.__console('error', message)
 
+    def formatime(self,pattern):
+        '''
+
+        :param pattern: '%Y-%m-%d %H:%M:%S'
+        :return:
+        '''
+        return time.strftime(pattern, time.localtime(time.time()))
+
     def Info(self,message):
-        sys.stdout.write(message+"\n")
+        nowtime=self.formatime("%Y-%m-%d %H:%M:%S")
+        sys.stdout.write("["+nowtime+"]"+" [message]:"+message+"\n")
+
+
+if __name__ == '__main__':
+    log=Log()
+    log.Info("start login room".ljust(30))
+    log.Info("start system settings".ljust(30))

@@ -24,11 +24,12 @@ def FreshRoom(business,env,communicate,role,channelid,userid,path,runNum):
     roomwin=None
     try:
         # 打开软件
+        log.Info("open software".ljust(30))
         app = Application(backend="uia").start(path)
         # 进行设置
         win = app.window(title="Form")
         win.Button5.click()
-
+        log.Info("start system settings".ljust(30))
         # 切换到对话框
         setwin = app["Dialog"]
 
@@ -49,30 +50,31 @@ def FreshRoom(business,env,communicate,role,channelid,userid,path,runNum):
         setwin.child_window(title=" Enter", control_type="Button").click()
 
         # 输入频道id,用户id，进入房间
+        log.Info("start login room".ljust(30))
         win['Edit1'].type_keys(channelid)
         win.type_keys("{TAB}")
         win['Edit2'].type_keys(userid)
         win.child_window(title="进入房间", control_type="Button").click()
         time.sleep(3)
         #确定弹框确定
-        roomwin=app.window(title="classroom")
+        roomwin=app.window(title="classroom".ljust(30))
 
         roomwin.type_keys("{VK_RETURN}")
-        log.Info("======fresh room start======")
+        log.Info("fresh room start".ljust(30))
         for i in range(runNum):
             roomwin.Button5.click()
             roomwin.type_keys("{VK_RETURN}")
         #避免弹框还在
         roomwin.type_keys("{VK_RETURN}")
-        log.Info("======fresh room end======")
+        log.Info("fresh room end".ljust(30))
 
 
     except:
         log.error(traceback.format_exc())
         roomwin.close()
-        log.Info("Please change channelid or userid")
+        log.Info("Please change channelid or userid".ljust(30))
     finally:
-        log.Info("======window close======")
+        log.Info("window close".ljust(30))
         roomwin.close()
 
 
@@ -101,7 +103,7 @@ def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,camerana
         # 进行设置
         win = app.window(title="Form")
         win.Button5.click()
-
+        log.Info("start system settings".ljust(30))
         # 切换到对话框
         setwin = app["Dialog"]
 
@@ -122,6 +124,7 @@ def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,camerana
         setwin.child_window(title=" Enter", control_type="Button").click()
 
         # 输入频道id,用户id，进入房间
+        log.Info("start login room".ljust(30))
         win['Edit1'].type_keys(channelid)
         win.type_keys("{TAB}")
         win['Edit2'].type_keys(userid)
@@ -133,25 +136,25 @@ def switchcaOrMicrophone(business,env,communicate,role,channelid,userid,camerana
         roomwin.print_control_identifiers()
         roomwin.Button7.click()
         camerawin=app.window(title="Form")
-        # camerawin.print_control_identifiers()
+
         #切换摄像头
-        log.Info("======switch camera start======")
+        log.Info("switch camera start".ljust(30))
         batch_combobox=camerawin.child_window(title=" Down", control_type="ComboBox",found_index=1)
         batch_combobox.select(cameraname)
         camerawin.close()
-        log.Info("======switch camera end======")
+        log.Info("switch camera end".ljust(30))
         #切换麦克风
-        log.Info("======switch Microphone start======")
+        log.Info("switch Microphone start".ljust(30))
         roomwin.Button8.click()
         microphonewin = app.window(title="Form")
         batch_combobox = microphonewin.child_window(title=" Down", control_type="ComboBox", found_index=0)
         batch_combobox.select(Microphone)
         microphonewin.close()
-        log.Info("======switch Microphone end======")
+        log.Info("switch Microphone end".ljust(30))
     except:
         log.Info(traceback.format_exc())
         roomwin.close()
-        log.Info("Please change channelid or userid")
+        log.Info("Please change channelid or userid".ljust(30))
     finally:
-        log.Info("======window close======")
+        log.Info("window close".ljust(30))
         roomwin.close()

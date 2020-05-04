@@ -25,6 +25,7 @@ class vlsdemo(object):
         self.path=path
         self.runNum=runNum
         self.roomwin = None
+        #初始化登录教室
         try:
             # 打开软件
             log.Info("open software".ljust(30))
@@ -68,7 +69,7 @@ class vlsdemo(object):
             self.roomwin = self.app.window(title="classroom".ljust(30))
             self.roomwin.type_keys("{VK_RETURN}")
         except:
-            log.error(traceback.format_exc())
+            log.Info(traceback.format_exc())
             self.roomwin.close()
             log.Info("Please change channelid or userid".ljust(30))
 
@@ -80,7 +81,6 @@ class vlsdemo(object):
         '''
 
         try:
-
             log.Info("fresh room start".ljust(30))
             for i in range(self.runNum):
                 self.roomwin.Button5.click()
@@ -89,7 +89,7 @@ class vlsdemo(object):
             self.roomwin.type_keys("{VK_RETURN}")
             log.Info("fresh room end".ljust(30))
         except:
-            log.error(traceback.format_exc())
+            log.Info(traceback.format_exc())
             self.roomwin.close()
             log.Info("Please change channelid or userid".ljust(30))
         finally:

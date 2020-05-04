@@ -73,7 +73,11 @@ class Log:
 
     def Info(self,message):
         nowtime=self.formatime("%Y-%m-%d %H:%M:%S")
-        sys.stdout.write("["+nowtime+"]"+" [message]:"+message+"\n")
+        infomation="["+nowtime+"]"+" [message]:"+message+"\n"
+        sys.stdout.write(infomation)
+        with open(self.logName,'a+') as f:
+            f.write(infomation)
+            f.close()
 
 
 if __name__ == '__main__':

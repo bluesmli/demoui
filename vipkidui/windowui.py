@@ -2,8 +2,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from utils.logs import *
-import traceback
 import sys
 sys.coinit_flags = 2 #修正pyqt5 和pywinauto 不能同时引入的问题
 from utils.VslDemotest import *
@@ -147,7 +145,9 @@ class Ui_MainWindow(QWidget):
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(self.FreshRoomRoom)
 
-
+        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_6.setGeometry(QtCore.QRect(900, 520, 81, 31))
+        self.pushButton_6.setObjectName("pushButton_6")
 
 
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
@@ -208,6 +208,8 @@ class Ui_MainWindow(QWidget):
         self.pushButton.setText(_translate("MainWindow", "刷新教室"))
         self.pushButton_2.setText(_translate("MainWindow", "切换摄像头及麦克风"))
         self.pushButton_3.setText(_translate("MainWindow", "混动音效"))
+        self.pushButton_6.setText(_translate("MainWindow", "清除"))
+        self.pushButton_6.clicked.connect(self.logClear)
 
     def onUpdateText(self, text):
         """Write console output to text widget."""
@@ -216,6 +218,13 @@ class Ui_MainWindow(QWidget):
         cursor.insertText(text)
         self.textEdit.setTextCursor(cursor)
         self.textEdit.ensureCursorVisible()
+
+    def logClear(self):
+        '''
+        清除日志
+        :return:
+        '''
+        self.textEdit.clear()
 
     def getFiles(self):
         '''
@@ -269,8 +278,10 @@ class Ui_MainWindow(QWidget):
         :return:
         '''
         self.init_settings()
-        FreshRoom(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
+
+        vls=vlsdemo(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
                   self.path,self.runNum)
+        vls.FreshRoom()
 
     def switchcaOrMicrophone(self):
         '''
@@ -278,15 +289,25 @@ class Ui_MainWindow(QWidget):
         :return:
         '''
         self.init_settings()
-        switchcaOrMicrophone(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
-                             self.cameraname,self.Microphone,self.path)
+        vls = vlsdemo(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
+                      self.path, self.runNum)
+        vls.switchcaOrMicrophone(self.cameraname,self.Microphone)
 
-    def efect(self):
+
+    def audioEffectMix(self):
+        '''
+        混音效果实现
+        :return:
+        '''
         pass
+
+
+
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
+    print("hello wordl!!!")
     ui.Widget.show()
     sys.exit(app.exec_())

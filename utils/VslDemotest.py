@@ -72,7 +72,8 @@ class vlsdemo(object):
             win.child_window(title="进入房间", control_type="Button").click()
             time.sleep(3)
             # 确定弹框确定
-            self.roomwin = self.app.window(title="classroom".ljust(30))
+            self.roomwin = self.app.window(title="classroom")
+            time.sleep(3)
             self.roomwin.type_keys("{VK_RETURN}")
         except:
             log.Info(traceback.format_exc())
@@ -88,9 +89,11 @@ class vlsdemo(object):
 
         try:
             log.Info("fresh room start".ljust(30))
-            for i in range(self.runNum):
+            for i in range(int(self.runNum)):
                 self.roomwin.Button5.click()
+                time.sleep(2)
                 self.roomwin.type_keys("{VK_RETURN}")
+                time.sleep(2)
             #避免弹框还在
             self.roomwin.type_keys("{VK_RETURN}")
             log.Info("fresh room end".ljust(30))

@@ -1,7 +1,13 @@
 from pywinauto.application import Application
 import traceback
 from utils.logs import *
-log = Log()
+
+
+cur_path = os.path.dirname(os.path.realpath(__file__))
+log_path = os.path.join(os.path.dirname(cur_path), 'logs')
+if not os.path.exists(log_path): os.mkdir(log_path)
+logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
+log = Log(logName)
 
 class vlsdemo(object):
 

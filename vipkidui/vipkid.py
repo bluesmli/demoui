@@ -208,6 +208,7 @@ class Ui_MainWindow(QWidget):
         self.pushButton.setText(_translate("MainWindow", "刷新教室"))
         self.pushButton_2.setText(_translate("MainWindow", "切换摄像头及麦克风"))
         self.pushButton_3.setText(_translate("MainWindow", "混动音效"))
+        self.pushButton_3.clicked.connect(self.audioEffectMix)
         self.pushButton_6.setText(_translate("MainWindow", "清除"))
         self.pushButton_6.clicked.connect(self.logClear)
 
@@ -299,7 +300,11 @@ class Ui_MainWindow(QWidget):
         混音效果实现
         :return:
         '''
-        pass
+        self.init_settings()
+
+        vls = vlsdemo(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
+                      self.path, self.runNum)
+        vls.audioMix()
 
 
 

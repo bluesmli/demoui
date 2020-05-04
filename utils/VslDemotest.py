@@ -1,7 +1,9 @@
-from pywinauto.application import Application
-import traceback
-from utils.logs import *
 
+from pywinauto.application import Application
+import pywinauto
+import traceback
+from pyautogui import *
+from utils.logs import *
 
 cur_path = os.path.dirname(os.path.realpath(__file__))
 log_path = os.path.join(os.path.dirname(cur_path), 'logs')
@@ -39,7 +41,7 @@ class vlsdemo(object):
             # 进行设置
             win = self.app.window(title="Form")
             #import  pywinauto.win32structures.RECT
-            print(win.rectangle().left,win.rectangle().right)
+            # print(win.rectangle().left,win.rectangle().right)
 
             win.Button5.click()
 
@@ -138,3 +140,19 @@ class vlsdemo(object):
         finally:
             log.Info("window close".ljust(30))
             self.roomwin.close()
+
+
+    def audioMix(self):
+        self.roomwin.child_window(title="混音效", control_type="Button").click()
+        self.roomwin.child_window(title="Float", control_type="Button").click()
+        pywinauto.mouse.move(coords=(self.roomwin.Dialog.rectangle().right-3, 500))
+        dragTo(self.roomwin.Dialog.rectangle().right+500, 500, button='left')
+        left,top=self.roomwin['VEdit'].rectangle().left, self.roomwin['VEdit'].rectangle().top
+        moveTo(left,top)
+        click(x=left, y=top)
+        typewrite("C:/Users/Administrator/Desktop/m1.mp3")
+        self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
+        self.roomwin.Button4.click()
+        time.sleep(10)
+        self.roomwin.Button5.click()
+        self.roomwin.close()

@@ -161,17 +161,19 @@ class vlsdemo(object):
             click(x=left, y=top)
             log.Info("audio effect start".ljust(30))
             typewrite(musicPath)
-            if (len(str(musicPath).split(";"))==2):
+            if (len(musicPath.split(";"))==2):
                 self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
-                self.roomwin.child_window(title="        222.mp3", control_type="CheckBox").click()
-            elif (len(str(musicPath).split(";"))==3):
+                self.roomwin.child_window(title="        112.mp3", control_type="CheckBox").click()
+            elif (len((musicPath).split(";"))==3):
                 self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
-                self.roomwin.child_window(title="        222.mp3", control_type="CheckBox").click()
-                self.roomwin.child_window(title="        333.mp3", control_type="CheckBox").click()
+                self.roomwin.child_window(title="        112.mp3", control_type="CheckBox").click()
+                self.roomwin.child_window(title="        113.mp3", control_type="CheckBox").click()
             else:
                 self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
+            time.sleep(3)
+            moveTo(self.roomwin.Button4.rectangle().left, self.roomwin.Button4.rectangle().top)
             self.roomwin.Button4.click()
-            time.sleep(playTime)
+            time.sleep(int(playTime))
             self.roomwin.Button5.click()
             log.Info("audio effect end".ljust(30))
         except:

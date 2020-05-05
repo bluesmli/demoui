@@ -237,7 +237,7 @@ class Ui_MainWindow(QWidget):
         self.pushButton_3.setText(_translate("MainWindow", "混音效"))
         self.pushButton_6.setText(_translate("MainWindow", "清除"))
         self.label_12.setText(_translate("MainWindow", "多媒体文件路径"))
-
+        self.pushButton_3.clicked.connect(self.audioEffectMix)
         self.pushButton_6.clicked.connect(self.logClear)
     def onUpdateText(self, text):
         """Write console output to text widget."""

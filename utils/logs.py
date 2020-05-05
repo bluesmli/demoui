@@ -6,10 +6,7 @@ import sys
 
 
 
-cur_path = os.path.dirname(os.path.realpath(__file__))
-log_path = os.path.join(os.path.dirname(cur_path), 'logs')
-if not os.path.exists(log_path): os.mkdir(log_path)
-logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
+
 
 log_colors_config = {
     'DEBUG': 'cyan',
@@ -21,7 +18,7 @@ log_colors_config = {
 
 
 class Log:
-    def __init__(self, logName=logName):
+    def __init__(self, logName):
         self.logName = logName
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
@@ -78,9 +75,3 @@ class Log:
         with open(self.logName,'a+') as f:
             f.write(infomation)
             f.close()
-
-
-if __name__ == '__main__':
-    log=Log()
-    log.Info("start login room".ljust(30))
-    log.Info("start system settings".ljust(30))

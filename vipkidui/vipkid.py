@@ -26,7 +26,6 @@ class Ui_MainWindow(QWidget):
         self.setupUi(self.Widget)
         sys.stdout = Stream(newText=self.onUpdateText)
 
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1030, 611)
@@ -36,7 +35,7 @@ class Ui_MainWindow(QWidget):
         self.label_19.setGeometry(QtCore.QRect(20, 290, 54, 12))
         self.label_19.setObjectName("label_19")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(0, 10, 1011, 171))
+        self.frame.setGeometry(QtCore.QRect(0, 0, 1011, 201))
         self.frame.setStyleSheet("")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -87,12 +86,10 @@ class Ui_MainWindow(QWidget):
         self.lineEdit_15.setObjectName("lineEdit_15")
         self.lineEdit_15.setPlaceholderText("请输入运行次数")
 
-
         self.lineEdit_14 = QtWidgets.QLineEdit(self.frame)
         self.lineEdit_14.setGeometry(QtCore.QRect(810, 80, 161, 21))
         self.lineEdit_14.setObjectName("lineEdit_14")
         self.lineEdit_14.setPlaceholderText("请输入麦克风名称")
-
 
         self.label_11 = QtWidgets.QLabel(self.frame)
         self.label_11.setGeometry(QtCore.QRect(490, 30, 61, 31))
@@ -116,8 +113,9 @@ class Ui_MainWindow(QWidget):
         self.label_24.setGeometry(QtCore.QRect(760, 80, 51, 31))
         self.label_24.setObjectName("label_24")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_4.setGeometry(QtCore.QRect(870, 130, 101, 31))
+        self.pushButton_4.setGeometry(QtCore.QRect(870, 160, 101, 31))
         self.pushButton_4.setObjectName("pushButton_4")
+
         self.comboBox_12 = QtWidgets.QComboBox(self.frame)
         self.comboBox_12.setGeometry(QtCore.QRect(70, 40, 161, 21))
         self.comboBox_12.setObjectName("comboBox_12")
@@ -149,6 +147,13 @@ class Ui_MainWindow(QWidget):
         self.pushButton_6.setGeometry(QtCore.QRect(900, 520, 81, 31))
         self.pushButton_6.setObjectName("pushButton_6")
 
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_7.setGeometry(QtCore.QRect(680, 130, 171, 21))
+        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.lineEdit_7.setPlaceholderText("请输入文件路径并分号隔开")
+        self.label_12 = QtWidgets.QLabel(self.frame)
+        self.label_12.setGeometry(QtCore.QRect(580, 130, 91, 21))
+        self.label_12.setObjectName("label_12")
 
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(720, 210, 121, 31))
@@ -201,17 +206,15 @@ class Ui_MainWindow(QWidget):
         self.comboBox_12.setItemText(3, _translate("MainWindow", "小班class"))
         self.comboBox_12.setItemText(4, _translate("MainWindow", "微米测试"))
         self.label_10.setText(_translate("MainWindow", "软件路径"))
-        #打开file 选择框
+        # 打开file 选择框
         self.pushButton_5.setText(_translate("MainWindow", "选择文件"))
-
-
         self.pushButton.setText(_translate("MainWindow", "刷新教室"))
         self.pushButton_2.setText(_translate("MainWindow", "切换摄像头及麦克风"))
-        self.pushButton_3.setText(_translate("MainWindow", "混动音效"))
-        self.pushButton_3.clicked.connect(self.audioEffectMix)
+        self.pushButton_3.setText(_translate("MainWindow", "混音效"))
         self.pushButton_6.setText(_translate("MainWindow", "清除"))
-        self.pushButton_6.clicked.connect(self.logClear)
+        self.label_12.setText(_translate("MainWindow", "多媒体文件路径"))
 
+        self.pushButton_6.clicked.connect(self.logClear)
     def onUpdateText(self, text):
         """Write console output to text widget."""
         cursor = self.textEdit.textCursor()
@@ -252,6 +255,7 @@ class Ui_MainWindow(QWidget):
         settings.setValue("Microphone",self.lineEdit_14.text())
         settings.setValue("runNum", self.lineEdit_15.text())
         settings.setValue("path", self.lineEdit_6.text())
+        settings.setValue("musicPath", self.lineEdit_7.text())
         QMessageBox.about(self, "保存", "保存成功")
 
 
@@ -272,6 +276,7 @@ class Ui_MainWindow(QWidget):
         self.Microphone = settings.value("Microphone")
         self.runNum = settings.value("runNum")
         self.path = settings.value("path")
+        self.musicPath = settings.value("musicPath")
 
     def FreshRoomRoom(self):
         '''
@@ -304,7 +309,7 @@ class Ui_MainWindow(QWidget):
 
         vls = vlsdemo(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
                       self.path, self.runNum)
-        vls.audioMix()
+        vls.audioMix(self.musicPath)
 
 
 
@@ -313,6 +318,5 @@ class Ui_MainWindow(QWidget):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
-    print("hello wordl!!!")
     ui.Widget.show()
     sys.exit(app.exec_())

@@ -142,17 +142,41 @@ class vlsdemo(object):
             self.roomwin.close()
 
 
-    def audioMix(self):
-        self.roomwin.child_window(title="混音效", control_type="Button").click()
-        self.roomwin.child_window(title="Float", control_type="Button").click()
-        pywinauto.mouse.move(coords=(self.roomwin.Dialog.rectangle().right-3, 500))
-        dragTo(self.roomwin.Dialog.rectangle().right+500, 500, button='left')
-        left,top=self.roomwin['VEdit'].rectangle().left, self.roomwin['VEdit'].rectangle().top
-        moveTo(left,top)
-        click(x=left, y=top)
-        typewrite("C:/Users/Administrator/Desktop/m1.mp3")
-        self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
-        self.roomwin.Button4.click()
-        time.sleep(10)
-        self.roomwin.Button5.click()
-        self.roomwin.close()
+    def audioMix(self,musicPath):
+        '''
+        混音效
+        :param musicPath:
+        :return:
+        '''
+        try:
+            self.roomwin.child_window(title="混音效", control_type="Button").click()
+            self.roomwin.child_window(title="Float", control_type="Button").click()
+            log.Info("pull window start".ljust(30))
+            pywinauto.mouse.move(coords=(self.roomwin.Dialog.rectangle().right-3, 500))
+            dragTo(self.roomwin.Dialog.rectangle().right+500, 500, button='left')
+            left,top=self.roomwin['VEdit'].rectangle().left, self.roomwin['VEdit'].rectangle().top
+            moveTo(left,top)
+            log.Info("pull window end".ljust(30))
+            click(x=left, y=top)
+            log.Info("audio effect start".ljust(30))
+            typewrite(musicPath)
+            if (len(str(musicPath).split(";"))==2):
+                self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
+                self.roomwin.child_window(title="        222.mp3", control_type="CheckBox").click()
+            elif (len(str(musicPath).split(";"))==3):
+                self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
+                self.roomwin.child_window(title="        222.mp3", control_type="CheckBox").click()
+                self.roomwin.child_window(title="        333.mp3", control_type="CheckBox").click()
+            else:
+                self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
+            self.roomwin.Button4.click()
+            time.sleep(10)
+            self.roomwin.Button5.click()
+            log.Info("audio effect end".ljust(30))
+        except:
+            log.Info(traceback.format_exc())
+            self.roomwin.close()
+            log.Info("Please change channelid or userid".ljust(30))
+        finally:
+            log.Info("window close".ljust(30))
+            self.roomwin.close()

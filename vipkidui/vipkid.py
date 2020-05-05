@@ -28,14 +28,14 @@ class Ui_MainWindow(QWidget):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1030, 611)
+        MainWindow.resize(1016, 898)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_19 = QtWidgets.QLabel(self.centralwidget)
-        self.label_19.setGeometry(QtCore.QRect(20, 290, 54, 12))
+        self.label_19.setGeometry(QtCore.QRect(20, 310, 54, 12))
         self.label_19.setObjectName("label_19")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(0, 0, 1011, 201))
+        self.frame.setGeometry(QtCore.QRect(0, 0, 1011, 221))
         self.frame.setStyleSheet("")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -113,7 +113,7 @@ class Ui_MainWindow(QWidget):
         self.label_24.setGeometry(QtCore.QRect(760, 80, 51, 31))
         self.label_24.setObjectName("label_24")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_4.setGeometry(QtCore.QRect(870, 160, 101, 31))
+        self.pushButton_4.setGeometry(QtCore.QRect(860, 180, 101, 31))
         self.pushButton_4.setObjectName("pushButton_4")
 
         self.comboBox_12 = QtWidgets.QComboBox(self.frame)
@@ -138,14 +138,7 @@ class Ui_MainWindow(QWidget):
         self.pushButton_5.setObjectName("pushButton_5")
         self.pushButton_5.clicked.connect(self.getFiles)
 
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(560, 210, 121, 31))
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.FreshRoomRoom)
 
-        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(900, 520, 81, 31))
-        self.pushButton_6.setObjectName("pushButton_6")
 
         self.lineEdit_7 = QtWidgets.QLineEdit(self.frame)
         self.lineEdit_7.setGeometry(QtCore.QRect(680, 130, 171, 21))
@@ -155,18 +148,41 @@ class Ui_MainWindow(QWidget):
         self.label_12.setGeometry(QtCore.QRect(580, 130, 91, 21))
         self.label_12.setObjectName("label_12")
 
+        self.label_26 = QtWidgets.QLabel(self.frame)
+        self.label_26.setGeometry(QtCore.QRect(10, 170, 61, 21))
+        self.label_26.setObjectName("label_26")
+        self.lineEdit_16 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_16.setGeometry(QtCore.QRect(70, 170, 161, 21))
+        self.lineEdit_16.setObjectName("lineEdit_16")
+        self.label_29 = QtWidgets.QLabel(self.frame)
+        self.label_29.setGeometry(QtCore.QRect(241, 170, 21, 21))
+        self.label_29.setObjectName("label_29")
+        self.pushButton_8 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_8.setGeometry(QtCore.QRect(860, 130, 101, 23))
+        self.pushButton_8.setObjectName("pushButton_8")
+        self.pushButton_8.clicked.connect(self.getMusicfiles)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(560, 240, 121, 31))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.FreshRoomRoom)
+
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(720, 210, 121, 31))
+        self.pushButton_2.setGeometry(QtCore.QRect(720, 240, 121, 31))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(870, 210, 101, 31))
+        self.pushButton_3.setGeometry(QtCore.QRect(860, 240, 101, 31))
         self.pushButton_3.setObjectName("pushButton_3")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(20, 310, 961, 181))
+        self.textEdit.setGeometry(QtCore.QRect(20, 340, 961, 181))
+        self.textEdit.setAutoFillBackground(False)
         self.textEdit.setObjectName("textEdit")
+        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_6.setGeometry(QtCore.QRect(900, 530, 81, 31))
+        self.pushButton_6.setObjectName("pushButton_6")
+
 
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1030, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1016, 23))
         self.menubar.setObjectName("menubar")
 
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -195,6 +211,7 @@ class Ui_MainWindow(QWidget):
         self.comboBox_10.setItemText(0, _translate("MainWindow", "env2"))
         self.comboBox_10.setItemText(1, _translate("MainWindow", "env5"))
         self.comboBox_10.setItemText(2, _translate("MainWindow", "env6"))
+
         self.label_9.setText(_translate("MainWindow", "频道"))
         self.label_21.setText(_translate("MainWindow", "环境"))
         self.label_24.setText(_translate("MainWindow", "麦克风"))
@@ -206,6 +223,13 @@ class Ui_MainWindow(QWidget):
         self.comboBox_12.setItemText(3, _translate("MainWindow", "小班class"))
         self.comboBox_12.setItemText(4, _translate("MainWindow", "微米测试"))
         self.label_10.setText(_translate("MainWindow", "软件路径"))
+
+        self.pushButton_5.setText(_translate("MainWindow", "选择..."))
+        self.label_12.setText(_translate("MainWindow", "多媒体文件路径"))
+        self.label_26.setText(_translate("MainWindow", "播放时间"))
+        self.label_29.setText(_translate("MainWindow", "S"))
+        self.pushButton_8.setText(_translate("MainWindow", "选择..."))
+
         # 打开file 选择框
         self.pushButton_5.setText(_translate("MainWindow", "选择文件"))
         self.pushButton.setText(_translate("MainWindow", "刷新教室"))
@@ -239,6 +263,19 @@ class Ui_MainWindow(QWidget):
                                                  "C:\\", "Docement ( *.exe )")
         self.lineEdit_6.setText(str(selectedFile))
 
+    def getMusicfiles(self):
+        '''
+        查找mp3 文件路径
+        :return:
+        '''
+        selectedFile, _ = QFileDialog.getOpenFileNames(self.Widget, "选择exe",
+                                                      "C:\\", "Docement ( *.mp3 )")
+        if selectedFile:
+            self.lineEdit_7.setText(';'.join(x for x in selectedFile))
+
+
+
+
     def save_setting(self):
         '''
         保存配置信息
@@ -255,7 +292,8 @@ class Ui_MainWindow(QWidget):
         settings.setValue("Microphone",self.lineEdit_14.text())
         settings.setValue("runNum", self.lineEdit_15.text())
         settings.setValue("path", self.lineEdit_6.text())
-        settings.setValue("musicPath", self.lineEdit_7.text())
+        settings.setValue("musicPath", self.lineEdit_7.text().replace("\"",""))
+        settings.setValue("playTime",self.lineEdit_16.text())
         QMessageBox.about(self, "保存", "保存成功")
 
 
@@ -277,6 +315,7 @@ class Ui_MainWindow(QWidget):
         self.runNum = settings.value("runNum")
         self.path = settings.value("path")
         self.musicPath = settings.value("musicPath")
+        self.playTime = settings.value("playTime")
 
     def FreshRoomRoom(self):
         '''
@@ -309,7 +348,7 @@ class Ui_MainWindow(QWidget):
 
         vls = vlsdemo(self.bussiness, self.env, self.communicate, self.role, self.channelid, self.userid,
                       self.path, self.runNum)
-        vls.audioMix(self.musicPath)
+        vls.audioMix(self.musicPath,self.playTime)
 
 
 

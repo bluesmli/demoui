@@ -142,10 +142,11 @@ class vlsdemo(object):
             self.roomwin.close()
 
 
-    def audioMix(self,musicPath):
+    def audioMix(self,musicPath,playTime):
         '''
         混音效
         :param musicPath:
+        :param playTime:
         :return:
         '''
         try:
@@ -170,7 +171,7 @@ class vlsdemo(object):
             else:
                 self.roomwin.child_window(title="        111.mp3", control_type="CheckBox").click()
             self.roomwin.Button4.click()
-            time.sleep(10)
+            time.sleep(playTime)
             self.roomwin.Button5.click()
             log.Info("audio effect end".ljust(30))
         except:

@@ -2,7 +2,7 @@ import logging
 import colorlog
 import time
 import sys
-
+import os
 
 log_colors_config = {
     'DEBUG': 'cyan',
@@ -12,9 +12,21 @@ log_colors_config = {
     'CRITICAL': 'red',
 }
 
+if getattr(sys, 'frozen', False):
+    cur_path = sys._MEIPASS
+else:
+    cur_path = os.path.split(os.path.realpath(__file__))[0]
+
+log_path = os.path.join(os.path.dirname(cur_path), 'logs')
+if not os.path.exists(log_path): os.mkdir(log_path)
+logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
+
+#日志输出文件在exe 释放路径父路径下 C:\Users\Administrator\AppData\Local\Temp\logs
+print("输出日志文件路径为："+logName)
+
 
 class Log:
-    def __init__(self, logName):
+    def __init__(self):
         self.logName = logName
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)

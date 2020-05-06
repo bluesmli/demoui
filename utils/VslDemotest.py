@@ -3,7 +3,9 @@ from  pywinauto.mouse import move
 import traceback
 from pyautogui import dragTo,moveTo,click,typewrite
 from utils.logs import *
-from vipkidui.vipkid import log
+
+
+log = Log()
 
 class vlsdemo(object):
 

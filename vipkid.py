@@ -9,11 +9,6 @@ from utils.VslDemotest import *
 from vipkidui.resources_rc import *
 
 
-cur_path = os.path.dirname(os.path.realpath(__file__))
-log_path = os.path.join(os.path.dirname(cur_path), 'logs')
-if not os.path.exists(log_path): os.mkdir(log_path)
-logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
-log = Log(logName)
 
 
 class Stream(QObject):
@@ -363,7 +358,9 @@ class Ui_MainWindow(QWidget):
 
 
 if __name__ == "__main__":
+    log = Log()
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
     ui.Widget.show()
+    log.Info("start test system")
     sys.exit(app.exec())

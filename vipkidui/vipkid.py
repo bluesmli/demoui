@@ -3,9 +3,17 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import sys
+import os
 sys.coinit_flags = 2 #修正pyqt5 和pywinauto 不能同时引入的问题
 from utils.VslDemotest import *
 from vipkidui.resources_rc import *
+
+
+cur_path = os.path.dirname(os.path.realpath(__file__))
+log_path = os.path.join(os.path.dirname(cur_path), 'logs')
+if not os.path.exists(log_path): os.mkdir(log_path)
+logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
+log = Log(logName)
 
 
 class Stream(QObject):
@@ -358,4 +366,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
     ui.Widget.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

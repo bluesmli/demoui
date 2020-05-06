@@ -1,15 +1,9 @@
-
 from pywinauto.application import Application
-import pywinauto
+from  pywinauto.mouse import move
 import traceback
-from pyautogui import *
+from pyautogui import dragTo,moveTo,click,typewrite
 from utils.logs import *
-
-cur_path = os.path.dirname(os.path.realpath(__file__))
-log_path = os.path.join(os.path.dirname(cur_path), 'logs')
-if not os.path.exists(log_path): os.mkdir(log_path)
-logName = os.path.join(log_path, '%s.log' % time.strftime('%Y-%m-%d'))
-log = Log(logName)
+from vipkidui.vipkid import log
 
 class vlsdemo(object):
 
@@ -78,9 +72,9 @@ class vlsdemo(object):
             time.sleep(3)
             self.roomwin.type_keys("{VK_RETURN}")
         except:
-            log.Info(traceback.format_exc())
+            log.error(traceback.format_exc())
             self.roomwin.close()
-            log.Info("Please change channelid or userid".ljust(30))
+            log.warning("Please change channelid or userid".ljust(30))
 
 
     def FreshRoom(self):
@@ -100,9 +94,9 @@ class vlsdemo(object):
             self.roomwin.type_keys("{VK_RETURN}")
             log.Info("fresh room end".ljust(30))
         except:
-            log.Info(traceback.format_exc())
+            log.error(traceback.format_exc())
             self.roomwin.close()
-            log.Info("Please change channelid or userid".ljust(30))
+            log.warning("Please change channelid or userid".ljust(30))
         finally:
             log.Info("window close".ljust(30))
             self.roomwin.close()
@@ -134,9 +128,9 @@ class vlsdemo(object):
             microphonewin.close()
             log.Info("switch Microphone end".ljust(30))
         except:
-            log.Info(traceback.format_exc())
+            log.error(traceback.format_exc())
             self.roomwin.close()
-            log.Info("Please change channelid or userid".ljust(30))
+            log.warning("Please change channelid or userid".ljust(30))
         finally:
             log.Info("window close".ljust(30))
             self.roomwin.close()
@@ -153,7 +147,7 @@ class vlsdemo(object):
             self.roomwin.child_window(title="混音效", control_type="Button").click()
             self.roomwin.child_window(title="Float", control_type="Button").click()
             log.Info("pull window start".ljust(30))
-            pywinauto.mouse.move(coords=(self.roomwin.Dialog.rectangle().right-3, 500))
+            move(coords=(self.roomwin.Dialog.rectangle().right-3, 500))
             dragTo(self.roomwin.Dialog.rectangle().right+500, 500, button='left')
             left,top=self.roomwin['VEdit'].rectangle().left, self.roomwin['VEdit'].rectangle().top
             moveTo(left,top)
@@ -177,9 +171,9 @@ class vlsdemo(object):
             self.roomwin.Button5.click()
             log.Info("audio effect end".ljust(30))
         except:
-            log.Info(traceback.format_exc())
+            log.error(traceback.format_exc())
             self.roomwin.close()
-            log.Info("Please change channelid or userid".ljust(30))
+            log.warning("Please change channelid or userid".ljust(30))
         finally:
             log.Info("window close".ljust(30))
             self.roomwin.close()

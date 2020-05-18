@@ -237,6 +237,7 @@ class Ui_MainWindow(QWidget):
         self.pushButton_5.setText(_translate("MainWindow", "选择文件"))
         self.pushButton.setText(_translate("MainWindow", "刷新教室"))
         self.pushButton_2.setText(_translate("MainWindow", "切换摄像头及麦克风"))
+        self.pushButton_2.clicked.connect(self.switchcaOrMicrophone)
         self.pushButton_3.setText(_translate("MainWindow", "混音效"))
         self.pushButton_6.setText(_translate("MainWindow", "清除"))
         self.label_12.setText(_translate("MainWindow", "多媒体文件路径"))
